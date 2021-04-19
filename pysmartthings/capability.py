@@ -45,17 +45,12 @@ CAPABILITIES_TO_ATTRIBUTES = {
     "equivalentCarbonDioxideMeasurement": ["equivalentCarbonDioxideMeasurement"],
     "execute": ["data"],
     "fanSpeed": ["fanSpeed"],
+    "custom.spiMode": ["spiMode"],
+    "custom.autoCleaningMode": ["autoCleaningMode"],
+    "custom.airConditionerOptionalMode": ["acOptionalMode"],
     "filterStatus": ["filterStatus"],
     "formaldehydeMeasurement": ["formaldehydeLevel"],
     "garageDoorControl": ["door"],
-    "gasMeter": [
-        "gasMeter",
-        "gasMeterCalorific",
-        "gasMeterConversion",
-        "gasMeterPrecision",
-        "gasMeterTime",
-        "gasMeterVolume",
-    ],
     "illuminanceMeasurement": ["illuminance"],
     "infraredLevel": ["infraredLevel"],
     "lock": ["lock"],
@@ -132,7 +127,7 @@ CAPABILITIES_TO_ATTRIBUTES = {
     "thermostatOperatingState": ["thermostatOperatingState"],
     "thermostatSetpoint": ["thermostatSetpoint"],
     "threeAxis": ["threeAxis"],
-    "tvChannel": ["tvChannel", "tvChannelName"],
+    "tvChannel": ["tvChannel"],
     "tvocMeasurement": ["tvocLevel"],
     "ultravioletIndex": ["ultravioletIndex"],
     "valve": ["valve"],
@@ -188,10 +183,12 @@ class Capability:
     equivalent_carbon_dioxide_measurement = "equivalentCarbonDioxideMeasurement"
     execute = "execute"
     fan_speed = "fanSpeed"
+    spi_mode = "custom.spiMode"
+    autoclean_mode = "custom.autoCleaningMode"
+    ac_optional_mode = "custom.airConditionerOptionalMode"
     filter_status = "filterStatus"
     formaldehyde_measurement = "formaldehydeMeasurement"
     garage_door_control = "garageDoorControl"
-    gas_meter = "gasMeter"
     illuminance_measurement = "illuminanceMeasurement"
     infrared_level = "infraredLevel"
     lock = "lock"
@@ -274,17 +271,15 @@ class Attribute:
     dust_level = "dustLevel"
     energy = "energy"
     equivalent_carbon_dioxide_measurement = "equivalentCarbonDioxideMeasurement"
+    samsung_options = "x.com.samsung.da.options"
     fan_mode = "fanMode"
+    spi_mode = "spiMode"
+    autoclean_mode = "autoCleaningMode"
+    ac_optional_mode = "acOptionalMode"
     fan_speed = "fanSpeed"
     filter_status = "filterStatus"
     fine_dust_level = "fineDustLevel"
     formaldehyde_level = "formaldehydeLevel"
-    gas_meter = "gasMeter"
-    gas_meter_calorific = "gasMeterCalorific"
-    gas_meter_conversion = "gasMeterConversion"
-    gas_meter_precision = "gasMeterPrecision"
-    gas_meter_time = "gasMeterTime"
-    gas_meter_volume = "gasMeterVolume"
     heating_setpoint = "heatingSetpoint"
     heating_setpoint_range = "heatingSetpointRange"
     hue = "hue"
@@ -354,7 +349,6 @@ class Attribute:
     thermostat_setpoint_range = "thermostatSetpointRange"
     three_axis = "threeAxis"
     tv_channel = "tvChannel"
-    tv_channel_name = "tvChannelName"
     tvoc_level = "tvocLevel"
     ultraviolet_index = "ultravioletIndex"
     valve = "valve"
@@ -373,7 +367,6 @@ ATTRIBUTE_ON_VALUES = {
     Attribute.filter_status: "replace",
     Attribute.motion: "active",
     Attribute.mute: "muted",
-    Attribute.playback_shuffle: "enabled",
     Attribute.presence: "present",
     Attribute.sound: "detected",
     Attribute.switch: "on",
